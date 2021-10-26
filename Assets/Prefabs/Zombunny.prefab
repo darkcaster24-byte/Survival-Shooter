@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5371035238106835636}
   - component: {fileID: 5371035238106835637}
   - component: {fileID: 5371035238106835638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Zombunny
   m_TagString: Enemy
   m_Icon: {fileID: 0}

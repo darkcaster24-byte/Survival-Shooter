@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5293139795958874930}
   - component: {fileID: 5293139795958874931}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Zombear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5293139796684661330}
   - component: {fileID: 5293139796684661331}
   - component: {fileID: 5293139796684661328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ZomBear
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b9d14572410594cb85d40eedfb150c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 300
+  startingHealth: 100
   currentHealth: 0
   sinkSpeed: 2.5
-  scoreValue: 50
+  scoreValue: 10
   deathClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
 --- !u!114 &5293139796684661330
 MonoBehaviour:
@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 5293139797455391834}
   - component: {fileID: 5293139797455391832}
   - component: {fileID: 5293139797455391835}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HitParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

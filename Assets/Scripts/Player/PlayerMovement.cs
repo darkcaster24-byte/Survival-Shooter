@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 movement;
     Animator anim;
     Rigidbody playerRigidbody;
+    PlayerHealth playerHealth;
     int floorMask;
     float camRayLength = 100f;
 
@@ -19,31 +20,40 @@ public class PlayerMovement : MonoBehaviour
         
         //Mendapatkan komponen Rigidbody
         playerRigidbody = GetComponent<Rigidbody>();
+
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     //Method player dapat berjalan
     public void Move(float h, float v)
     {
+        if (playerHealth.currentHealth <= 0)
+        {
+            return;
+        }
+
         //Set nilai x dan y
         movement.Set(h, 0f, v);
-        
+
         //Menormalisasi nilai vector agar total panjang dari vector adalah 1
         movement = movement.normalized * speed * Time.deltaTime;
         
         //Move to position
         playerRigidbody.MovePosition(transform.position + movement);
+        
     }
 
     private void FixedUpdate()
     {
+        
         //Mendapatkan nilai input horizontal (-1,0,1)
         float h = Input.GetAxisRaw("Horizontal");
 
         //Mendapatkan nilai input vertical (-1,0,1)
         float v = Input.GetAxisRaw("Vertical");
-
         Move(h, v);
         Turning();
+
         Animating(h, v);
     }
     
@@ -72,6 +82,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Animating(float h, float v)
     {
+        if (playerHealth.currentHealth <= 0)
+        {
+            return;
+        }
         bool walking = h != 0f || v != 0f;
         anim.SetBool("IsWalking", walking);
     }
